@@ -8,9 +8,9 @@ module dcmi_tx(
 
 );
     // clock divider
-    // Digilent Arty A7-35T defaults 100 MHz onboard crystal oscillator
-    // want 5MHz
-    localparam int NUM_CYC_FULL = 100000000 / 5000000; // 20
+    // DE1-SoC 50 MHz onboard crystal oscillator
+    // want 5 MHz
+    localparam int NUM_CYC_FULL = 50000000 / 5000000; // 20
     localparam int NUM_CYC_HALF = NUM_CYC_FULL / 2; // 10
 
     logic [3:0] clk_counter;
