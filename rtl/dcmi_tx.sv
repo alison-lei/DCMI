@@ -1,10 +1,10 @@
+`timescale 1ns/1ns
+
 module dcmi_tx(
     input logic clk,
     input logic reset,
     output logic [13:0] data,
-    output logic VSYNC,
-    output logic HSYNC,
-    output logic PIXCLK
+    output logic VSYNC, HSYNC, PIXCLK
 
 );
     // clock divider
