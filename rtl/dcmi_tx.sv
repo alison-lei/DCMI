@@ -56,7 +56,7 @@ module dcmi_tx(
     statetype dcmi_state = VBLANK;
 
     logic [13:0] frame_mem [0:TOTAL_LINE_COUNT*LINE_LENGTH - 1]; // 14 bits of data for each pixel, total 320*256 pixels
-    initial $readmemh("image.mem", frame_mem); // loads the pixel data into array
+    initial $readmemh("images/image.mem", frame_mem); // loads the pixel data into array
 
     logic [16:0] addr;
     logic [13:0] data_q;
