@@ -14,4 +14,4 @@ def visualize_image(path: str) -> None:
 
 
 if __name__ == "__main__":
-    visualize_image("images/image.mem")
+    visualize_image("images/image1.mem")

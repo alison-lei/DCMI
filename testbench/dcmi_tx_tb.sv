@@ -34,13 +34,13 @@ module dcmi_tx_tb;
             prev_HSYNC <= 1'b1;
             prev_VSYNC <= 1'b1;
         end
-        if (!HSYNC && VSYNC && prev_HSYNC == 1'b1) begin // is just beginning the next line
+        if (!HSYNC && VSYNC && prev_HSYNC == 1'b1) begin // is just beginning the next line, need to catch drop in HSYNC
             if (addr % WIDTH !== 0)
                 err_line_mismatch++;
             prev_HSYNC <= 1'b0;
             prev_VSYNC <= 1'b1;
         end
-        if (!HSYNC && !VSYNC && prev_VSYNC == 1'b1) begin // starting next frame
+        if (!HSYNC && !VSYNC && prev_VSYNC == 1'b1) begin // starting next frame, need to catch drop in VSYNC
             $display("the total pixel mismathes: %0d", err_count);
             $display("the total line mistatches: %0d", err_line_mismatch);
             if (err_count == 0 && err_line_mismatch == 0 && addr == HEIGHT*WIDTH)
